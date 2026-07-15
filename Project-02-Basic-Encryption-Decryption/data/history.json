@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2026-07-15",
+    "time": "11:07:48",
+    "cipher": "Vigen\u00e8re",
+    "operation": "Encrypt",
+    "key": "MANAL",
+    "input_preview": "manal\n",
+    "output_preview": "yaaaw\n"
+  },
+  {
+    "date": "2026-07-15",
+    "time": "11:07:50",
+    "cipher": "Vigen\u00e8re",
+    "operation": "Decrypt",
+    "key": "MANAL",
+    "input_preview": "manal\n",
+    "output_preview": "aaaaa\n"
+  },
+  {
+    "date": "2026-07-15",
+    "time": "11:07:58",
+    "cipher": "Vigen\u00e8re",
+    "operation": "Encrypt",
+    "key": "MANAL",
+    "input_preview": "manal\n",
+    "output_preview": "yaaaw\n"
+  }
+]
