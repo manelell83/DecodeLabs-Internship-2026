@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  --color-background: #f4f6fa;
+  --color-foreground: #0f1729;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f1729;
+  --color-border: #dde3ee;
+  --color-muted: #eaeef6;
+  --color-muted-foreground: #566078;
+
+  --color-primary: #1d4ed8;
+  --color-primary-foreground: #eef2ff;
+  --color-accent: #3b82f6;
+  --color-accent-foreground: #0b1220;
+
+  --color-excellent: #16a34a;
+  --color-good: #2563eb;
+  --color-fair: #d97706;
+  --color-poor: #dc2626;
+
+  /* Finding severity scale — distinct from the overall Excellent/Good/Fair/Poor score level */
+  --color-critical: #dc2626;
+  --color-high: #ea580c;
+  --color-medium: #d97706;
+  --color-low: #2563eb;
+  --color-info: #64748b;
+
+  --shadow-panel: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
+
+  --animate-score-in: score-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-up: fade-up 0.4s ease-out both;
+  --animate-scan-sweep: scan-sweep 2.2s linear infinite;
+
+  @keyframes score-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scan-sweep {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+}
+
+.dark {
+  --color-background: #0a0e1a;
+  --color-foreground: #e5eaf5;
+  --color-card: #0f1626;
+  --color-card-foreground: #e5eaf5;
+  --color-border: #1e2740;
+  --color-muted: #131c30;
+  --color-muted-foreground: #8892a8;
+
+  --color-primary: #3b82f6;
+  --color-primary-foreground: #eef2ff;
+  --color-accent: #60a5fa;
+  --color-accent-foreground: #0b1220;
+
+  --color-excellent: #4ade80;
+  --color-good: #60a5fa;
+  --color-fair: #fbbf24;
+  --color-poor: #f87171;
+
+  --color-critical: #f87171;
+  --color-high: #fb923c;
+  --color-medium: #fbbf24;
+  --color-low: #60a5fa;
+  --color-info: #94a3b8;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.enterprise-grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
