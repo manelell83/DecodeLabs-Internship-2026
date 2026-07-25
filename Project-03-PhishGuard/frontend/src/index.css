@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  --color-background: #f6f8fb;
+  --color-foreground: #0b1220;
+  --color-card: #ffffff;
+  --color-card-foreground: #0b1220;
+  --color-border: #e2e8f0;
+  --color-muted: #eef2f7;
+  --color-muted-foreground: #5b6472;
+
+  --color-primary: #0e7490;
+  --color-primary-foreground: #f0fdff;
+  --color-accent: #0ea5b7;
+  --color-accent-foreground: #04222a;
+
+  --color-critical: #dc2626;
+  --color-high: #ea580c;
+  --color-medium: #ca8a04;
+  --color-low: #16a34a;
+
+  --shadow-panel: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
+
+  --animate-scan-pulse: scan-pulse 2s ease-in-out infinite;
+  --animate-score-in: score-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-up: fade-up 0.4s ease-out both;
+
+  @keyframes scan-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+  @keyframes score-in {
+    from { stroke-dashoffset: var(--score-dash, 283); opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.dark {
+  --color-background: #070b14;
+  --color-foreground: #e6edf5;
+  --color-card: #0e1524;
+  --color-card-foreground: #e6edf5;
+  --color-border: #1c2536;
+  --color-muted: #121a2a;
+  --color-muted-foreground: #8a96a8;
+
+  --color-primary: #22d3ee;
+  --color-primary-foreground: #04222a;
+  --color-accent: #38bdf8;
+  --color-accent-foreground: #04222a;
+
+  --color-critical: #f87171;
+  --color-high: #fb923c;
+  --color-medium: #facc15;
+  --color-low: #4ade80;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.security-grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
