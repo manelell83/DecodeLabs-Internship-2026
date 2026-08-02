@@ -157,9 +157,6 @@ each check's simulated output, the `CommandRunner`'s error handling, and the ful
 they're deterministic and OS-independent — no admin rights or Windows host required to run the
 suite.
 
-## Screenshots
-
-_Placeholder — add screenshots of the Landing page, Dashboard, and System Audit result here._
 
 ## Future Improvements
 
