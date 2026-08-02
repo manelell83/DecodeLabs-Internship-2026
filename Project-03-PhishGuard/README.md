@@ -142,9 +142,7 @@ pytest
 26 tests cover the URL analyzer, content analyzer, risk scorer, and the full API flow
 (scan → history → report) via `TestClient` against an isolated in-memory SQLite database.
 
-## Screenshots
 
-_Placeholder — add screenshots of the Landing page, Dashboard, and Email Analyzer here._
 
 ## Future Improvements
 
