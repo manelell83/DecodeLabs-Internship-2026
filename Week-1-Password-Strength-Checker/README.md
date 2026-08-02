@@ -55,9 +55,6 @@ python app.py
 - Introduce localization and theme switching
 - Package the app into a native desktop installer
 
-## Screenshots
-
-Placeholder for screenshots to be added in future iterations.
 
 ## License
 
